@@ -41,3 +41,7 @@ List cartList=[];
 int selectedindex =0;
 bool status=false;
 int index=0;
+int qty=0;
+double amount=0;
+double total=0;
+

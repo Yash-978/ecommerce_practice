@@ -99,8 +99,16 @@ class _DetailScreenState extends State<DetailScreen> {
                     {
                       cartList.add(productList[selectedindex]);
                     }
+                  for(int i=0;i<cartList.length;i++)
+                    {
+                      qty=(qty+cartList[i]['member']).toInt();
+                      amount=(amount+cartList[i]['price']*(cartList[i]['member']));
+                    }
+                  total=((amount)*18/100)+amount;
 
                   Navigator.of(context).pushNamed('/cart');
+
+
                 },
                 child: Container(
                   height: 80,

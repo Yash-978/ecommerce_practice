@@ -189,43 +189,47 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Container imagecontainer({required String name, required String img , required String description,required int price}) {
-    return Container(
-                  height: 250,
-                  width: 170,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black,
-                        width: 0.7),
-                    borderRadius: BorderRadius.circular(15),
+  Widget imagecontainer({required String name, required String img , required String description,required int price}) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Container(
 
+                    height: 250,
+                    width: 170,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black,
+                          width: 0.7),
+                      borderRadius: BorderRadius.circular(15),
+
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+
+
+                        Row(
+                          mainAxisAlignment :MainAxisAlignment.center,
+
+                          children: [
+                            Container(
+
+                                child: Image.asset(img)),
+                          ],
+                        ), Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(name),
+                            Text(price.toString()),
+                            Icon(Icons.arrow_forward_rounded),
+                          ],
+                        )
+
+
+
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-
-
-                      Row(
-                        mainAxisAlignment :MainAxisAlignment.center,
-
-                        children: [
-                          Container(
-
-                              child: Image.asset(img)),
-                        ],
-                      ), Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(name),
-                          Text(price.toString()),
-                          Icon(Icons.arrow_forward_rounded),
-                        ],
-                      )
-
-
-
-                    ],
-                  ),
-                );
+    );
   }
 }
 
